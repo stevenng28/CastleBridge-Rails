@@ -1,6 +1,6 @@
 class TextMailer < ApplicationMailer
   
-  default from: 'example@notifications.com'
+  default from: 'stevenng1294@gmail.com'
   
   def status_email(user)
     @user = user
