@@ -1,9 +1,10 @@
 class TextMailer < ApplicationMailer
-  
   default from: 'stevenng1294@gmail.com'
   
-  def status_email(user)
+  def status_email(user, timestamp, status)
     @user = user
-    mail(to: @user.email, subject: 'Test Text')
+    @timestamp = timestamp
+    @status = status
+    mail to: @user.email, subject: 'Test Text'
   end
 end

@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
   
-  get 'static_pages/home'
-
+  root 'static_pages#home'
+  
   get 'static_pages/notify'
   
-  get '/home',      to: 'static_pages#home'
-  get '/notify',    to: 'static_pages#notify'
-  
-  root 'static_pages#home'
+  get '/home',          to: 'static_pages#home'
+  get '/sendclosed',    to: 'static_pages#sendclosed'
+  get '/sendopen',      to: 'static_pages#sendopen'
 
-  resources :users
+  resources :toggle_notifications, only: [:edit]
   
 end
