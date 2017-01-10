@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170106025020) do
+ActiveRecord::Schema.define(version: 20170110072759) do
+
+  create_table "bridge_statuses", force: :cascade do |t|
+    t.datetime "closed"
+    t.datetime "open"
+    t.datetime "closing"
+    t.datetime "opening"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

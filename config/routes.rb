@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get '/home',          to: 'static_pages#home'
   get '/sendclosed',    to: 'static_pages#sendclosed'
   get '/sendopen',      to: 'static_pages#sendopen'
-
+  get '/record',        to: 'bridge_status#edit'
+  put '/record',        to: 'bridge_status#update'
   resources :toggle_notifications, only: [:edit]
-  
+  resources :bridge_statuses
 end
