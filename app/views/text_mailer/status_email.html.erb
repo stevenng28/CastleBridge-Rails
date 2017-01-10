@@ -6,7 +6,8 @@
   <body>
     <p> 
     This is a test email showing <%= @status %>, sent at <%= @timestamp %> PST
-    
+    <br>
+    <br>
     <%= link_to "Link to toggle notifications: ", edit_toggle_notification_url(@user.toggle_token, email: @user.email) %>
     </p>
   </body>

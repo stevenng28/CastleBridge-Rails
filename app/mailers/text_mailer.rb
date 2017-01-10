@@ -5,6 +5,6 @@ class TextMailer < ApplicationMailer
     @user = user
     @timestamp = timestamp
     @status = status
-    mail to: @user.email, subject: 'Test Text'
+    mail to: @user.email, subject: 'CastleBridge Email'
   end
 end
