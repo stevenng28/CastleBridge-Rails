@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  closed: 2017-01-10 07:27:59
+  open: 2017-01-10 07:27:59
+  closing: 2017-01-10 07:27:59
+  opening: 2017-01-10 07:27:59
+
+two:
+  closed: 2017-01-10 07:27:59
+  open: 2017-01-10 07:27:59
+  closing: 2017-01-10 07:27:59
+  opening: 2017-01-10 07:27:59

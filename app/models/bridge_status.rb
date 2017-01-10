@@ -1,0 +1,2 @@
+class BridgeStatus < ApplicationRecord
+end
