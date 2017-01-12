@@ -12,19 +12,19 @@ class TextMailerPreview < ActionMailer::Preview
   end
   
   def normal_email_closed
-    TextMailer.normal_email('closed')
+    TextMailer.normal_email(User.first, 'closed')
   end
   
   def morning_email_closed
-    TextMailer.morning_email('closed')
+    TextMailer.morning_email(User.first, 'closed')
   end
   
   def warning_email
-    TextMailer.warning_email(Warning.find_by(status: 'open'))
+    TextMailer.warning_email(User.first, Warning.find_by(status: 'open'))
   end
   
   def resolved_email
-    TextMailer.resolved_email(Warning.find_by(status: 'open'), User.first)
+    TextMailer.resolved_email(User.first, Warning.find_by(status: 'open'))
   end
 
 end
