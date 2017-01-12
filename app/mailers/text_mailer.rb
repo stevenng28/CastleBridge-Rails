@@ -9,46 +9,31 @@ class TextMailer < ApplicationMailer
   end
   
   #Handle emails to notify_to users
-  def normal_email(status)
-    puts 'Send to notify'
+  def normal_email(user, status)
+    @user = user
     @status = status
-    @users = User.where(notify_to: true)
-    @users.each do |user|
-      @user = user
-      mail to: @user.email, subject: 'CastleBridge Normal Email'
-    end
+    mail to: @user.email, subject: 'CastleBridge Normal Email'
   end
   
   #Handle emails to morning_notify users
-  def morning_email(status)
-    puts 'Send to morning'
+  def morning_email(user, status)
+    @user = user
     @status = status
-    @users = User.where(morning_notify: true)
-    @users.each do |user|
-      @user = user
-      mail to: @user.email, subject: 'CastleBridge Morning Email'
-    end
+    mail to: @user.email, subject: 'CastleBridge Morning Email'
   end
   
   #Handle warning emails to all users
-  def warning_email(warning)
+  def warning_email(user, warning)
+    @user = user
     @warning = warning
-    @users = User.all
-    @users.each do |user|
-      @user = user
-      mail to: @user.email, subject: 'CastleBridge Warning Email'
-    end
+    mail to: @user.email, subject: 'CastleBridge Warning Email'
   end
   
   #Handle sending resolved emails to all users
-  def resolved_email(warning, user)
+  def resolved_email(user, warning)
+    @user = user
     @warning = warning
-    @resolved_by = user.name
-    @users = User.all
-    @users.each do |user|
-      @user = user
-      mail to: @user.email, subject: 'CastleBridge Resolved Email'
-    end
+    mail to: @user.email, subject: 'CastleBridge Resolved Email'
   end
   
 end

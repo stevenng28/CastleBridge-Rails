@@ -1,5 +1,5 @@
 module BridgeStatusHelper
-  
+  include ApplicationHelper
   #Uses previous statuses to determine whether to send mail
   def handle_mail(update_key)
     recent_status = most_recent_statuses()
@@ -10,11 +10,11 @@ module BridgeStatusHelper
                                  suppressed_by_id: nil,
                                  minutes_open: 0)
       if (recent_status[0][0] == 'opening' && recent_status[1][0] == 'closed')
-        TextMailer.morning_email(update_key).deliver_now if is_weekday_morning?
-        TextMailer.normal_email(update_key).deliver_now  if !is_weekday_morning?
+        sendMorning(update_key) if is_weekday_morning?
+        sendNormal(update_key)  if !is_weekday_morning?
       elsif (recent_status[0][0] == 'closing' && recent_status[1][0] == 'open')
-        TextMailer.morning_email(update_key).deliver_now if is_weekday_morning?
-        TextMailer.normal_email(update_key).deliver_now  if !is_weekday_morning?
+        sendMorning(update_key) if is_weekday_morning?
+        sendNormal(update_key)  if !is_weekday_morning?
       end
     when 'open'
       if (recent_status[0][0] == 'open')
@@ -22,7 +22,7 @@ module BridgeStatusHelper
         if(time_open > 1800)
           warning = Warning.find_by(status: 'open')
           warning.update_attribute(:minutes_open, warning.minutes_open + 30)
-          TextMailer.warning_email(warning).deliver_now if !warning.suppressed?
+          sendWarning(warning) if !warning.suppressed?
         end
       end
     else
