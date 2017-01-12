@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :generate_user_tokens
+  after_create :generate_token
   
   validates :name, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }
