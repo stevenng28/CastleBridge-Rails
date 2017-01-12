@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :generate_toggle_token
+  after_create :generate_user_tokens
   
   validates :name, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }
@@ -10,7 +10,7 @@ class User < ApplicationRecord
   end
   
   # Updates user with new toggle digest
-  def generate_toggle_token
+  def generate_token
     self.update_attribute(:toggle_token, User.new_token)
   end
 end

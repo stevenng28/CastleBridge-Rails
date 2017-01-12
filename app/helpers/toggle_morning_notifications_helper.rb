@@ -1,0 +1,2 @@
+module ToggleMorningNotificationsHelper
+end

@@ -1,0 +1,5 @@
+The door has been <%= @warning.status %> for <%= @warning.minutes_open %> minutes!
+
+Link to resolve this warning:
+
+<%= edit_suppress_warning_url(id: @warning.id, user_token: @user.toggle_token) %>

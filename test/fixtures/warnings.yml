@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  suppressed: false
+  suppressed_by: MyString
+  minutes_open: 1
+
+two:
+  status: MyString
+  suppressed: false
+  suppressed_by: MyString
+  minutes_open: 1

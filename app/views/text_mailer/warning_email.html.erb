@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p> 
+    The door has been <%= @warning.status %> for <%= @warning.minutes_open %> minutes!
+    <br>
+    <br>
+    <%= link_to "Link to resolve this warning: ", edit_suppress_warning_url(id: @warning.id, user_token: @user.toggle_token) %>
+    </p>
+  </body>
+</html>
