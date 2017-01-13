@@ -1,5 +1,4 @@
 The door is <%= @status %>
 
 Link to toggle morning notifications:
-
-<%= edit_toggle_morning_notification_url(id: @user.toggle_token, email: @user.email) %>
+<%= edit_toggle_morning_notification_url(id: @user.toggle_token, user_id: @user.id) %>

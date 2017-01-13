@@ -18,7 +18,7 @@ module BridgeStatusHelper
       end
     when 'open'
       if (recent_status[0][0] == 'open')
-        time_open = Time.now - recent_status[0][1]
+        time_open = Time.now - recent_status[1][1]
         if(time_open > 1800)
           warning = Warning.find_by(status: 'open')
           warning.update_attribute(:minutes_open, warning.minutes_open + 30)

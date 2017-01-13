@@ -20,7 +20,6 @@ class BridgeStatusController < ApplicationController
     else
       render html: 'No update made'
     end
-    
   end
   
   private

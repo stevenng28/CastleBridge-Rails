@@ -8,7 +8,8 @@
     The door is <%= @status %>
     <br>
     <br>
-    <%= link_to "Link to toggle notifications: ", edit_toggle_notification_url(@user.toggle_token, email: @user.email) %>
+    <%= link_to "Link to toggle notifications: ", 
+        edit_toggle_notification_url(id: @user.toggle_token, user_id: @user.id) %>
     </p>
   </body>
 </html>

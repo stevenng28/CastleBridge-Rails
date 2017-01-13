@@ -1,13 +1,21 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  string: MyString
-  email: MyString
-  string: MyString
+foo:
+  name: foo
+  email: test@example.com
+  notify_to: true
+  morning_notify: true
+  toggle_token: 'foo_toggling'
 
-two:
-  name: MyString
-  string: MyString
-  email: MyString
-  string: MyString
+bar:
+  name: bar
+  email: test@example.com
+  notify_to: false
+  morning_notify: false
+  toggle_token: 'bar_toggling'
+  
+baz:
+  name: bar
+  email: test@example.com
+  notify_to: true
+  morning_notify: false
+  toggle_token: 'baz_toggling'

@@ -1,5 +1,3 @@
 The door is <%= @status %>
-
-<a href=<%= edit_toggle_notification_url(id: @user.toggle_token, email: @user.email) %>>
-  Link to toggle normal notifications:
-</a>
+Link to toggle normal notifications:
+<%= edit_toggle_notification_url(id: @user.toggle_token, user_id: @user.id) %>
