@@ -15,7 +15,6 @@ class BridgeStatusUpdateTest < ActionDispatch::IntegrationTest
   
   test "door sequence: closed, opening, closed" do
     ActionMailer::Base.deliveries.clear
-    sleep 1
     put record_path, params: { status: { :closed => 'true' } }
     sleep 1
     put record_path, params: { status: { :opening => 'true' } }
@@ -26,7 +25,7 @@ class BridgeStatusUpdateTest < ActionDispatch::IntegrationTest
   
   test "door sequence: open, closing, closed" do
     ActionMailer::Base.deliveries.clear
-    sleep 1
+    @bridge_status.update_attribute(:opening, Time.now)
     put record_path, params: { status: { :open => 'true' } }
     sleep 1
     put record_path, params: { status: { :closing => 'true' } }
