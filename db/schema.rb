@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 20170112034711) do
 
   create_table "bridge_statuses", force: :cascade do |t|
-    t.datetime "closed",     default: '2017-01-12 02:38:29'
-    t.datetime "open",       default: '2017-01-12 02:38:29'
-    t.datetime "closing",    default: '2017-01-12 02:38:29'
-    t.datetime "opening",    default: '2017-01-12 02:38:29'
+    t.datetime "closed",     default: '2017-07-17 05:00:30'
+    t.datetime "open",       default: '2017-07-17 05:00:30'
+    t.datetime "closing",    default: '2017-07-17 05:00:30'
+    t.datetime "opening",    default: '2017-07-17 05:00:30'
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
   end

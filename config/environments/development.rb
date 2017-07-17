@@ -31,7 +31,7 @@ Rails.application.configure do
   #Configuration for sending email to server logs instead
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :test
-  host = 'rails-tutorial-sng28.c9users.io'
+  host = 'localhost:3000'
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   config.action_mailer.perform_caching = false
   
